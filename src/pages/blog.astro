@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const imagen =
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpX4iUsNDZZhMOEOsTE_D2ow_vUznCcpvh8cH1FlTjGeDSzIzdCbHDFKI&s=10';
+
+const posts = [
+  {
+    titulo: 'Mi primera entrada',
+    fecha: '23 de octubre de 2026',
+    resumen: 'Hoy he empezado a aprender Astro y ya tengo mi primera web funcionando.',
+  },
+  {
+    titulo: 'Contadores con React y Vanilla JS',
+    fecha: '23 de octubre de 2026',
+    resumen: 'He hecho el mismo contador de dos formas distintas y he visto las diferencias.',
+  },
+  {
+    titulo: 'Túneles con Cloudflare',
+    fecha: '23 de octubre de 2026',
+    resumen: 'Cómo enseñar mi web local a otras personas usando cloudflared.',
+  },
+];
+---
+
+<BaseLayout>
+  <h1>Blog</h1>
+  <p>Bienvenido a mi blog.</p>
+
+  <section class="posts">
+    {
+      posts.map((post) => (
+        <article class="card">
+          <img src={imagen} alt={post.titulo} />
+          <div class="card-body">
+            <h3>{post.titulo}</h3>
+            <small>{post.fecha}</small>
+            <p>{post.resumen}</p>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .card {
+    width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: white;
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .card-body h3 {
+    margin: 0 0 4px;
+  }
+
+  .card-body small {
+    color: #777;
+  }
+
+  .card-body p {
+    margin: 8px 0 0;
+    color: #555;
+  }
+</style>

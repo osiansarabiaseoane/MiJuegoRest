@@ -1,0 +1,16 @@
+---
+export const prerender = false;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const fechahora = new Date().toLocaleString('es-ES');
+const productos = ['Manzanas', 'Peras', 'Platanos'];
+---
+
+<BaseLayout>
+  <h1>Lista de productos usando SSR</h1>
+  <p>Fecha y hora: {fechahora}</p>
+  <p>Esta fecha se calcula en cada petición</p>
+  <ul>
+    {productos.map((p) => <li>{p}</li>)}
+  </ul>
+</BaseLayout>

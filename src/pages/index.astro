@@ -1,0 +1,71 @@
+---
+import Button from "../components/Button.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Se ejecuta en el servidor / backend
+const nombre = "Osián";
+const favoritos = ["Comer", "Dormir", "Programar"];
+---
+
+<BaseLayout>
+  <h1>Mi primera pagina de astro</h1>
+  <p>Yo me llamo {nombre}</p>
+  <h2>Hobbies</h2>
+  <ul>
+    {favoritos.map((favorito) => <li>{favorito}</li>)}
+  </ul>
+  <Button title="Tócame">Tócame</Button>
+
+  <article class="card">
+    <div class="cabecera">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpX4iUsNDZZhMOEOsTE_D2ow_vUznCcpvh8cH1FlTjGeDSzIzdCbHDFKI&s=10"
+        alt="Imagen de la card"
+      />
+      <h3>Mi primera card</h3>
+    </div>
+    <p>Esta es la primera línea de texto de mi card.</p>
+    <p>Esta es la segunda línea de texto de mi card.</p>
+    <p>Esta es la tercera línea de texto de mi card.</p>
+  </article>
+</BaseLayout>
+
+<style>
+  h1 {
+    color: #4f4f4f;
+    text-align: center;
+    font-size: xx-large;
+  }
+
+  .card {
+    width: 400px;
+    margin-top: 30px;
+    padding: 16px;
+    border: 2px solid #86d98a;
+    border-radius: 16px;
+    background: white;
+  }
+
+  .cabecera {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .cabecera img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #86d98a;
+  }
+
+  .cabecera h3 {
+    margin: 8px 0 0;
+  }
+
+  .card p {
+    margin: 12px 0 0;
+    color: #555;
+  }
+</style>
