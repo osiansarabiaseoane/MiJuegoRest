@@ -7,6 +7,9 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://osiansarabiaseoane.github.io',
+  base: '/MiJuegoRest',
+
   server: {
     host: true,
     allowedHosts: ['.trycloudflare.com'],
@@ -18,4 +21,3 @@ export default defineConfig({
 
   integrations: [react()],
 });
-

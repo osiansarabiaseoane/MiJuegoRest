@@ -1,16 +1,18 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
 <nav>
-    <a href="/">Inicio</a>
-    <a href="/index2">Index2</a>
-    <a href="/ssg">SSG</a>
-    <a href="/ssr">SSR</a>
-    <a href="/csr">CSR</a>
-    <a href="/estilos">Estilos</a>
-    <a href="/vanilla">Vanilla</a>
-    <a href="/react">React</a>
-     <a href="/blog">Blog</a>
-     <a href="/juego">Juego</a>
-
-
+    <a href={`${base}/`}>Inicio</a>
+    <a href={`${base}/index2`}>Index2</a>
+    <a href={`${base}/ssg`}>SSG</a>
+    <a href={`${base}/ssr`}>SSR</a>
+    <a href={`${base}/csr`}>CSR</a>
+    <a href={`${base}/estilos`}>Estilos</a>
+    <a href={`${base}/vanilla`}>Vanilla</a>
+    <a href={`${base}/react`}>React</a>
+    <a href={`${base}/blog`}>Blog</a>
+    <a href={`${base}/juego`}>Juego</a>
 </nav>
 
 <style>
